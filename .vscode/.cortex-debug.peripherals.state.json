@@ -1,1 +1,1 @@
-[{"node":"GPIOA","expanded":false,"format":0,"pinned":true},{"node":"RCC","expanded":true,"format":0,"pinned":true},{"node":"RCC.CFGR","expanded":true,"format":0}]
+[{"node":"GPIOA","expanded":true,"format":0,"pinned":true},{"node":"GPIOA.MODER","expanded":true,"format":0},{"node":"GPIOA.OTYPER","expanded":true,"format":0},{"node":"RCC","expanded":true,"format":0,"pinned":true},{"node":"RCC.CR","expanded":true,"format":0},{"node":"RCC.CFGR","expanded":true,"format":0}]

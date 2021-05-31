@@ -13,7 +13,8 @@ SRC_DIR = src
 
 
 
-default: $(OUTPUT_DIR)/$(PROJECT_NAME).bin
+flash: $(OUTPUT_DIR)/$(PROJECT_NAME).bin
+	st-flash write $< 0x08000000
 
 $(OUTPUT_DIR)/$(PROJECT_NAME).bin: $(OUTPUT_DIR)/$(PROJECT_NAME).elf
 	arm-none-eabi-objcopy -O binary $< $@

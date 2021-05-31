@@ -1,14 +1,5 @@
 #include "main.h"
 
-int x;
-int y;
-int z = 5;
-static double dub = 2.43;
-
-int add(int a, int b) {
-    return a + b;
-}
-
 int main() {
     SysClockSetup();
 
@@ -17,26 +8,34 @@ int main() {
     */
 
     /* Enable GPIOA clock */
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN_Msk;
+    GPIOA_CLK_EN;
     /* Set PA8 in AFO mode */
     GPIOA->MODER |= GPIO_MODER_MODER8_1;
-    /* Set HSI clock as output */
-    RCC->CFGR &= ~(RCC_CFGR_MCO1_Msk);
 
+    GPIO_CFG_TypeDef led_cfg = {
+        .port = GPIOA,
+        .pin = GPIO_PIN_6 | GPIO_PIN_7,
+        .mode = GPIO_MODE_OUTPUT_PP,
+        .speed = GPIO_SPEED_LOW,
+        .pupd = GPIO_PUPD_PULLDOWN
+    };
+    GPIO_CFG(&led_cfg);
 
+    led_cfg.pin &= ~(GPIO_PIN_7);
+    GPIO_CFG(&led_cfg);
+
+    GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+    GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+    GPIO_TogglePin(GPIOA, GPIO_PIN_6);
     /* Enable D2 on-board LED (PA6)*/
     //Set PA6 to output
-    GPIOA->MODER |= GPIO_MODER_MODER6_0;
+    //GPIOA->MODER |= GPIO_MODER_MODER6_0;
     //Set output register to 1
-    GPIOA->ODR &= ~GPIO_ODR_OD6_Msk;
-
+    //GPIOA->ODR &= ~GPIO_ODR_OD6_Msk;
     /* System Clock Setup */
 
-    y = add(x, z);
-    int sum = add(y, z);
+    while(1) {    
 
-    while(1) {
-        sum++;
     }
 
     return 0;

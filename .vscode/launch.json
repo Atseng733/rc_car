@@ -12,7 +12,7 @@
             "type": "cortex-debug",
             "servertype": "openocd",
             "interface" : "swd",
-            "runToEntryPoint" : "Reset_Handler",
+            "runToEntryPoint" : "main",
             "debuggerArgs": [],
             "postRestartSessionCommands": ["mon shutdown"],
             "svdFile": "STM32F407.svd",

@@ -2,6 +2,7 @@
 #define __STM32F407xx_H
 
 #include <stdint.h>
+#include <board_config.h>
 
 /** @addtogroup Configuration_section_for_CMSIS
   * @{
