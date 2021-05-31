@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include "stm32f407xx.h"
+#include "system_setup.h"
 
 int main();
 

@@ -12,7 +12,7 @@ extern uint32_t INIT_SP; //Start of SRAM1 + STACK_SIZE in linker script
 /*
     Interrupt Handler Declarations
 */
-
+void Reset_Handler();
 void NMI_Handler            (void) __attribute__ ((weak, alias("Default_Handler")));
 void HardFault_Handler      (void) __attribute__ ((weak));
 void MemManage_Handler      (void) __attribute__ ((weak, alias("Default_Handler")));
